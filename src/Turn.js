@@ -1,7 +1,7 @@
 class Turn {
   constructor(answer, currentCard) {
     this.answer = answer;
-    this.currentCard = currentCard
+    this.currentCard = currentCard 
   }
 
   returnGuess() {
