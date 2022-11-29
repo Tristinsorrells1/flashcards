@@ -58,10 +58,29 @@ describe('Round', function() {
     it('should return \'correct!\' if the answer matches the card', function() {
         expect(round.takeTurn(answer)).to.equal('correct!')
     });
-    it('', function() {
+    it('should return \'incorrect!\' if the answer matches the card', function() {
+        expect(round.takeTurn('wrongGuess')).to.equal('incorrect!')
+    });
+    it('should store incorrect guesses', function() {
+        round.takeTurn(answer)
+        expect(JSON.stringify(round.incorrectGuesses)).to.equal(JSON.stringify([]))
+
+        round.takeTurn('wrongGuess')
+        expect(JSON.stringify(round.incorrectGuesses)).to.equal(JSON.stringify([2]))
+
+        round.takeTurn('wrong')
+         expect(JSON.stringify(round.incorrectGuesses)).to.equal(JSON.stringify([2, 3]))
+    });
+    it('should return the percentage of correct guesses', function() {
+        round.takeTurn(answer)
+        round.takeTurn('wrong')
+        expect(round.calculatePercentCorrect()).to.equal(50)
 
     });
-    it('', function() {
+    it('should print the percentage of correct questions', function() {
+        round.takeTurn(answer)
+        round.takeTurn('wrong')
+        expect(round.endRound()).to.equal(`** Round over! ** You answered 50% of the questions correctly!`)
 
     });
 })
