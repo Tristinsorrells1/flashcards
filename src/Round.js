@@ -13,13 +13,12 @@ class Round {
   }
   takeTurn(answer) {
       let turn = new Turn(answer, this.currentCard)
-      this.currentCard = this.deck.cards[this.turns]
       this.turns++
-      if (answer !== this.currentCard.correctAnswer) {
+      if (turn.evaluateGuess()) {
           this.incorrectGuesses.push(this.currentCard.id)
-          return 'incorrect!'
         }
-        return 'correct!'
+     this.currentCard = this.deck.cards[this.turns]
+     return turn.giveFeedback();
     }
     calculatePercentCorrect() {
         return (this.incorrectGuesses.length / this.turns) * 100

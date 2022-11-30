@@ -2,8 +2,8 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Game  = require('../src/game.js');
-const prototypeData  = require('../src/data.js');
 const Round = require('../src/Round');
+const prototypeData  = require('../src/data.js');
 
 describe('Game', function() {
     let cardInfo 
@@ -17,7 +17,7 @@ describe('Game', function() {
        expect(game).to.be.an.instanceof(Game); 
     }); 
     it('should put Cards in a Deck', function() {
-        game.start(cardInfo)
+        game.start()
         expect(game.checkDeckForCard(cardInfo)).to.equal(true)
     }); 
     it('should create a new Round using the Deck', function() {
