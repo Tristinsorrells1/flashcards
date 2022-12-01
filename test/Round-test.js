@@ -21,7 +21,6 @@ describe("Round", function () {
 			prototypeData[2].answers[2],
 		];
 		deck = new Deck(cards);
-		// turn = new Turn(answers[0], currentCard)
 		round = new Round(deck);
 	});
 	it("should be an instance of Round", function () {
@@ -31,6 +30,10 @@ describe("Round", function () {
 		expect(round.deck).to.equal(deck);
 	});
 	it("should create a new Turn instance", function () {
+		round.takeTurn(answers[0]);
+		expect(round.turn).to.be.an.instanceof(Turn);
+	});
+	it("should store the current turn", function () {
 		round.takeTurn(answers[0]);
 		expect(round.turn).to.be.an.instanceof(Turn);
 	});
@@ -63,7 +66,7 @@ describe("Round", function () {
 		round.takeTurn("incorrect answer");
 		expect(round.returnCurrentCard()).to.equal(cards[2]);
 	});
-	it("currentCard should be the first Card in the Deck at the start of the Round", function () {
+	it("should set currentCard as the first Card in the Deck at the start of the Round", function () {
 		expect(deck.cards[0]).to.equal(round.currentCard);
 	});
 	it("should return 'correct!' if the answer matches the card", function () {
@@ -74,12 +77,10 @@ describe("Round", function () {
 	});
 	it("should store incorrect guesses", function () {
 		round.takeTurn(answers[0]);
-		expect(JSON.stringify(round.incorrectGuesses)).to.equal(JSON.stringify([]));
+		expect(round.incorrectGuesses).to.deep.equal([]);
 
 		round.takeTurn("wrong guess");
-		expect(JSON.stringify(round.incorrectGuesses)).to.equal(
-			JSON.stringify([2])
-		);
+		expect(round.incorrectGuesses).to.deep.equal([2]);
 
 		round.takeTurn("wrong");
 		expect(JSON.stringify(round.incorrectGuesses)).to.equal(

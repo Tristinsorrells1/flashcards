@@ -10,7 +10,10 @@ var card;
 var round;
 
 class Game {
-	constructor() {}
+	constructor() {
+    this.deck
+    this.currentRound
+  }
 
 	start(cardInfo) {
 		const cards = cardInfo.map(
@@ -18,7 +21,10 @@ class Game {
 				new Card(elem.id, elem.question, elem.answers, elem.correctAnswer)
 		);
 		const deck = new Deck(cards);
+    this.deck = deck
 		round = new Round(deck);
+    this.currentRound = round
+    return cards
 		// this.printMessage(deck, round)
 		// this.printQuestion(round)
 	}
