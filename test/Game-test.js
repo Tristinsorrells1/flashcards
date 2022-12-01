@@ -19,7 +19,6 @@ describe("Game", function () {
 		round = new Round(deck);
         cards = game.createCards(cardInfo);
 		game.createDeck(cards);
-        // game.start(cardInfo)
 	});
 	it("should be an instance of Game", function () {
 		expect(game).to.be.an.instanceof(Game);
