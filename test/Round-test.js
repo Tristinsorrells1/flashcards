@@ -83,17 +83,12 @@ describe("Round", function () {
 		expect(round.incorrectGuesses).to.deep.equal([2]);
 
 		round.takeTurn("wrong");
-		expect(JSON.stringify(round.incorrectGuesses)).to.equal(
-			JSON.stringify([2, 3])
-		);
+		expect(round.incorrectGuesses).to.deep.equal([2, 3]);
 	});
 	it("should return the percentage of correct guesses", function () {
 		round.takeTurn(answers[0]);
 		round.takeTurn("wrong");
 		expect(round.calculatePercentCorrect()).to.equal(50);
-		// round.takeTurn("wrong again");
-		// round.takeTurn("still wrong");
-		// expect(round.calculatePercentCorrect()).to.equal(25);
 	});
 	it("should print the percentage of correct questions", function () {
 		round.takeTurn(answers[0]);
