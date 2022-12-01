@@ -88,13 +88,13 @@ describe("Round", function () {
 	it("should return the percentage of correct guesses", function () {
 		round.takeTurn(answers[0]);
 		round.takeTurn("wrong");
-		expect(round.calculatePercentCorrect()).to.equal(50);
+		expect(round.calculatePercentCorrect()).to.equal(50.00);
 	});
 	it("should print the percentage of correct questions", function () {
 		round.takeTurn(answers[0]);
 		round.takeTurn("wrong");
 		expect(round.endRound()).to.equal(
-			`** Round over! ** You answered 50% of the questions correctly!`
+			`** Round over! ** You answered 50.00% of the questions correctly!`
 		);
 	});
 });
