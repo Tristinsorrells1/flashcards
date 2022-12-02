@@ -4,8 +4,7 @@
 - This project allows users to test their knowledge by answering a set of flashcard questions in their terminal. Users will be presented with one question at a time and will be given three multiple choice options for the answer. The user selects an answer by typing the number that corresponds with the multiple choice option they wish to select. The answer the user selects will be changed to blue text to indicate that is the answer they have chosen. The user submits their answer by pressing return on their keyboard. After submitting their answer, the user will be notified if their answer was correct or incorrect. After answering all the questions, the user will recieve a final score indicating what percentage of the questions they answered correctly. If a user scores less than 90% of the questions correctly, a new round of the flashcard questions will automatically start. The user can quit answering questions at any point by running ctrl + C in their terminal.
 
 ### A GIF of the working application
-![Library___Loom_-_1_December_2022__1__AdobeExpress](https://user-images.githubusercontent.com/109977562/205193426-70ed2230-9eea-48a5-a9aa-2fdd1d2841b3.gif)
-
+![Library___Loom_-_1_December_2022__1__AdobeExpress (1)](https://user-images.githubusercontent.com/109977562/205193849-04cf8b8c-8d7d-4d11-8fe7-6ffc666ebd78.gif)
 
 ### Technologies used
 - JavaScript 
