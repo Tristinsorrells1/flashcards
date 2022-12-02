@@ -1,11 +1,9 @@
-const data = require("./data");
-const prototypeQuestions = data.prototypeData;
 const util = require("./util");
 const Round = require("../src/Round");
 const Deck = require("../src/Deck");
 const Card = require("../src/Card");
 
-//Global Variables
+// ---------------------------Global Variables---------------------------//
 let card;
 let round;
 let cards;

@@ -7,9 +7,9 @@ class Round {
 	constructor(deck) {
 		this.deck = deck;
 		this.turns = 0;
-		this.incorrectGuesses = [];
-		this.currentCard = deck.cards[this.turns];
 		this.turn;
+		this.currentCard = deck.cards[this.turns];
+		this.incorrectGuesses = [];
 	}
 	returnCurrentCard() {
 		return this.currentCard;
@@ -33,19 +33,19 @@ class Round {
 		)}% of the questions correctly!`;
 		console.log(endGame);
 		if (this.calculatePercentCorrect() < 90) {
-			this.startOver();
+			return this.startOver();
 		}
-    return endGame
+		return endGame;
 	}
 	startOver() {
 		this.turns = 0;
-    this.incorrectGuesses = []
+		this.incorrectGuesses = [];
 		this.currentCard = this.deck.cards[this.turns];
 		this.returnCurrentCard();
-		console.log(
-			`** New round! Repeat flashcards until you score a 90.00% or better **`
-		);
+		var newRound = `** New round! Repeat flashcards until you score a 90.00% or better **`;
+		console.log(newRound);
 		util.main(this);
+		return newRound;
 	}
 }
 
