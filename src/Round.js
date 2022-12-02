@@ -1,4 +1,3 @@
-const prototypeData = require("../src/data.js");
 const Turn = require("../src/Turn");
 const Game = require("../src/Game");
 const util = require("./util");
@@ -43,6 +42,9 @@ class Round {
 		this.currentCard = this.deck.cards[this.turns];
 		this.returnCurrentCard();
 		var newRound = `** New round! Repeat flashcards until you score a 90.00% or better **`;
+		console.log(
+			`----------------------------------------------------------------------------`
+		);
 		console.log(newRound);
 		util.main(this);
 		return newRound;

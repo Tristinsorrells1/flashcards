@@ -25,7 +25,7 @@ describe("Deck", function () {
 		expect(deck.cards).to.equal(cards);
 	});
 
-	it("should know how many Card instances it stores", function () {
+	it("should know how many Cards it stores", function () {
 		expect(deck.countCards()).to.equal(3);
 	});
 });
