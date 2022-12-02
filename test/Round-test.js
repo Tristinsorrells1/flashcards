@@ -50,21 +50,11 @@ describe("Round", function () {
 		expect(round.currentCard).to.equal(round.deck.cards[2]);
 	});
 
-	it("should start each round with 0 turns", function () {
+	it("should start each Round with a Turn count of 0", function () {
 		expect(round.turns).to.equal(0);
 	});
 
-	it("should create a new Turn each round", function () {
-		round.takeTurn(answers[0]);
-		expect(round.turn).to.be.an.instanceof(Turn);
-	});
-
-	it("should store the Turn", function () {
-		round.takeTurn(answers[0]);
-		expect(round.turn).to.deep.equal(turn);
-	});
-
-	it("should update the turns count by one each round", function () {
+	it("should update the Turns count by one each Turn", function () {
 		round.takeTurn(answers[0]);
 		expect(round.turns).to.equal(1);
 
@@ -75,11 +65,21 @@ describe("Round", function () {
 		expect(round.turns).to.equal(3);
 	});
 
-	it("should start with no incorrect guesses", function () {
+	it("should create a new Turn each Round", function () {
+		round.takeTurn(answers[0]);
+		expect(round.turn).to.be.an.instanceof(Turn);
+	});
+
+	it("should store the current Turn", function () {
+		round.takeTurn(answers[0]);
+		expect(round.turn).to.deep.equal(turn);
+	});
+
+	it("should start with no incorrect answers", function () {
 		expect(round.incorrectGuesses).to.deep.equal([]);
 	});
 
-	it("should store incorrect guesses", function () {
+	it("should store the user's incorrect answers", function () {
 		round.takeTurn(answers[0]);
 		expect(round.incorrectGuesses).to.deep.equal([]);
 
@@ -127,14 +127,14 @@ describe("Round", function () {
 		);
 	});
 
-	it("should reset the number of turns in the new Round", function () {
+	it("should reset the number of Turns to 0 in the new Round", function () {
 		round.takeTurn(answers[0]);
 		round.takeTurn("wrong");
 		round.endRound();
 		expect(round.turns).to.equal(0);
 	});
 
-	it("should reset the number of incorrect guesses in the new Round", function () {
+	it("should start with no incorrect answers in the new Round", function () {
 		round.takeTurn("wrong");
 		round.endRound();
 		expect(round.incorrectGuesses).to.deep.equal([]);

@@ -42,11 +42,11 @@ describe("Turn", function () {
 		expect(turn.returnCard()).to.equal(currentCard);
 	});
 
-	it("should return true if the user's guess matches the answer on the card", function () {
+	it("should return true if the user's guess matches the answer on the Card", function () {
 		expect(turn.evaluateGuess()).to.equal(true);
 	});
 
-	it("should return false if the user's guess does not match the answer on the card", function () {
+	it("should return false if the user's guess does not match the answer on the Card", function () {
 		expect(turn2.evaluateGuess()).to.equal(false);
 	});
 

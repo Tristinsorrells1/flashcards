@@ -28,6 +28,7 @@ describe("Game", function () {
 	it("should create a Deck", function () {
 		game.createDeck(cardInfo);
 		expect(game.deck).to.be.an.instanceof(Deck);
+		expect(game.deck).to.deep.equal(deck);
 	});
 
 	it("should create Cards", function () {
@@ -41,7 +42,7 @@ describe("Game", function () {
 		expect(newDeck.cards).to.deep.equal(cardInfo);
 	});
 
-	it("should create a new Round using the Deck", function () {
+	it("should create a new Round with the Deck", function () {
 		game.createDeck(cardInfo);
 		expect(game.createRound()).to.be.an.instanceof(Round);
 		expect(game.currentRound.deck).to.be.an.instanceof(Deck);
