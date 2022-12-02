@@ -45,7 +45,7 @@ class Round {
 		var newRound = `** New round! Repeat flashcards until you score a 90.00% or better **`;
 		console.log(newRound);
 		util.main(this);
-		return newRound
+		return newRound;
 	}
 }
 
